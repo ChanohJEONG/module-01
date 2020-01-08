@@ -1,0 +1,65 @@
+#submitbutton {
+	width: 100%;
+	padding: 0.4em 0;
+	background: #2c3e50;
+	color: white;
+	border: 0;
+	font-size: 1em;
+	cursor: pointer;
+}
+
+#btnBox {
+	width: 20.8em;
+}
+
+#btnBox label span {
+	display: inline-block;
+	border: 1px solid #8bb4b5;
+	width: 4.8em;
+	padding: 0.42em 0;
+	margin: 0.2em 0;
+	text-align: center;
+	background-color: #e1eded;
+}
+
+#btnBox input[type=radio] {
+	display: none;
+}
+
+#btnBox input[type='radio']:checked+span {
+	background-color: #1ABC9C;
+	color: white;
+}
+
+#btnBox input[type='radio']:disabled+span {
+	border: 1px solid #d6d4d4;
+	color: lightgray;
+	background: #f8f8f8;
+}
+
+#btnBox input[type='button'] {
+	width: 100%;
+	padding: 0.4em 0;
+	background: #2c3e50;
+	color: white;
+	border: 0;
+	font-size: 1em;
+	cursor: pointer;
+}
+
+#btnHead {
+	font-size: 1.3em;
+}
+
+#menu1 {
+	text-align: left;
+
+}
+
+#menu2 {
+	text-align: center;
+}
+
+#btnBox p {
+	margin-bottom: 0;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="common/head">
+</head>
+<body>
+	<!-- Navigation -->
+	<nav th:replace="common/nav"></nav>
+	<div class="jumbotron">
+		<div class="container text-center">
+
+			<form method="post" action="/signin">
+				<h2>Login</h2>
+				<br></br>
+				<div class="form-group">
+					<label for="email">Email:</label> <input type="text"
+						class="form-control" id="email" name="email">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label> <input type="password"
+						class="form-control" id="pwd" name="pwd"
+						onkeypress="caps_lock(event)">
+
+					<p id="capslock"
+						style="position: relative; border: 2px solid #003b83; width: 300px; bottom: 0px; display: none">
+						&nbsp;<b>CapsLock</b> 키가 눌려있습니다.&nbsp;
+					</p>
+
+				</div>
+				<button class="btn btn-primary btn-block" id="signin">로그인</button>
+			</form>
+
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer th:replace="common/footer"> </footer>
+
+
+</body>
+
+	<script>
+		$("#signin").click(function() {
+			$("form").submit();
+			return false;
+		});
+	</script>
+
+	<script type="text/javascript">
+		function caps_lock(e) {
+			var keyCode = 0;
+			var shiftKey = false;
+			keyCode = e.keyCode;
+			shiftKey = e.shiftKey;
+			if (((keyCode >= 65 && keyCode <= 90) && !shiftKey)
+					|| ((keyCode >= 97 && keyCode <= 122) && shiftKey)) {
+				show_caps_lock();
+				setTimeout("hide_caps_lock()", 3500);
+			} else {
+				hide_caps_lock();
+			}
+		}
+
+		function show_caps_lock() {
+			$("#capslock").show();
+		}
+
+		function hide_caps_lock() {
+			$("#capslock").hide();
+		}
+	</script>
+</html>
